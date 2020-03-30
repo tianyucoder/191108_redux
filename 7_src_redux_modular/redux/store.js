@@ -7,9 +7,6 @@ import {createStore,applyMiddleware} from 'redux'
 import reducer from './reducers'
 //引入redux-thunk用于支持异步action
 import thunk from  'redux-thunk'
-//引入
-import {composeWithDevTools} from 'redux-devtools-extension'
-
 
 //创建并暴露一个store,同时指定了reducer ------- 老板在创业之初就找好了手下人
-export default createStore(reducer,composeWithDevTools(applyMiddleware(thunk)))
+export default createStore(reducer,applyMiddleware(thunk))

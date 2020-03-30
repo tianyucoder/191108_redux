@@ -1,7 +1,20 @@
-//该组件是UI组件，不可以使用任何的redux中的API
+/* 
+一个组件要和redux交互，按照如下步骤：
+		第一步：引入connect，用于创建容器组件。
+		第二步：引入action （如果不操作状态，这一步就不用）
+		第三步：connect(映射状态，映射操作状态的方法)(原本你定义的组件)
+*/
 import React, {Component} from 'react'
+//从react-redux中引入connect方法
+import {connect} from 'react-redux'
+//引入action_creator
+import {
+	createIncrementAction,
+	createDecrementAction,
+	createWaitIncrementAction
+} from '../redux/actions/count'
 
-export default class Count extends Component {
+class Count extends Component {
 
 	//加法
 	increment = ()=>{
@@ -57,3 +70,18 @@ export default class Count extends Component {
 		)
 	}
 }
+
+//创建好为Count服务的容器组件，并且为Count组件传递了：(1).状态 (2).操作状态的方法。
+export default connect(
+	state => ({//state是redux帮你保存的总状态，是那个大大的对象，传递给UI组件状态
+		number:state.number,
+		personCount:state.persons.length
+	}), 
+	{ //传递给UI组件操作状态的方法
+		increment:createIncrementAction,
+		decrement:createDecrementAction,
+		incrementAsync:createWaitIncrementAction
+	}
+)(Count)
+
+
