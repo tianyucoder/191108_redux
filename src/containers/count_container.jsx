@@ -7,12 +7,12 @@ import {
 	createIncrementAction,
 	createDecrementAction,
 	createWaitIncrementAction
-} from '../redux/count_action_creator'
+} from '../redux/actions/count_action_creator'
 
 
 //创建好为Count服务的容器组件，并且为Count组件传递了：(1).状态 (2).操作状态的方法。
 export default connect(
-	state => ({number:state}), //传递给UI组件状态
+	state => ({number:state.number}), //state是redux帮你保存的总状态，是那个大大的对象，传递给UI组件状态
 	{ //传递给UI组件操作状态的方法
 		jia:createIncrementAction,
 		jian:createDecrementAction,
