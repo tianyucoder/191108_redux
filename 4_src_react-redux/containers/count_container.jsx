@@ -12,7 +12,6 @@ import {
 //创建好为Count服务的容器组件，并且为Count组件传递了：(1).状态 (2).操作状态的方法。
 export default connect(
 	state => ({number:state}),
-
 	//复杂的写法，如下：
 	/* dispatch => (
 		{
@@ -20,7 +19,6 @@ export default connect(
 			jian:(value)=>{dispatch(createDecrementAction(value))}
 		}
 	) */
-
 	//精简的写法，如下：备注:connect底层会将精简版所写的对象，加工成复杂写法
 	{
 		jia:createIncrementAction,

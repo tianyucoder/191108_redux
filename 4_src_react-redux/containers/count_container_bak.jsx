@@ -36,7 +36,7 @@ function mapDispatchToProps(dispatch){
 		jia:(value)=>{dispatch(createIncrementAction(value))},
 		jian:(value)=>{dispatch(createDecrementAction(value))}
 	}
-}
+}d
 
 //创建好为Count服务的容器组件，并且为Count组件传递了：(1).状态 (2).操作状态的方法。
 export default connect(mapStateToProps,mapDispatchToProps)(Count)
@@ -51,4 +51,3 @@ export default connect(mapStateToProps,mapDispatchToProps)(Count)
 				(2)函数2用于给UI组件传递操作状态的方法，函数2也可以被一个对象所代替。
 				(3)Demo组件是指明：生成的容器组件为Demo组件服务
 */	
-
