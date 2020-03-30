@@ -3,9 +3,9 @@
 */
 
 //引入count_reducer
-import countReducer from './count'
+import countReducer from './count_reducer'
 //引入person_reducer
-import personReducer from './person'
+import personReducer from './person_reducer'
 //引入combineReducers专门用于合并所有的reducer，最终生成一个总的reducer
 import {combineReducers} from 'redux'
 

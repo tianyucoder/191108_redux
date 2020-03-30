@@ -13,10 +13,9 @@ export default class Person extends Component {
 	}
 
 	render() {
-		const {persons,number} = this.props
 		return (
 			<div>
-				<h2>当前总人数为：{persons.length}，上方的Count组件中，当前的和为：{number}</h2>
+				<h2>当前总人数为：{this.props.persons.length}</h2>
 				<input ref="name" type="text" placeholder="输入名字"/>
 				<input ref="age" type="text" placeholder="输入年龄"/>
 				<button onClick={this.add}>添加</button>
