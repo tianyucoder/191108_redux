@@ -33,9 +33,10 @@ export default class Count extends Component {
 	incrementAsync = ()=>{
 		//1.获取用户输入
 		let {value} = this.refs.checkNumber
-		setTimeout(()=>{
+		/* setTimeout(()=>{
 			this.props.jia(value*1)
-		},500)
+		},500) */
+		this.props.waitJia(value*1,1000)
 	}
 
 	render() {
